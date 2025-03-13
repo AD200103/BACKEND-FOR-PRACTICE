@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import cors from "cors";
 import taskRouter from "./src/router/task.js";
+import userRouter from "./src/router/user.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -12,6 +13,7 @@ mongoose
   .then(() => console.log("Connected!"))
   .catch(() => console.log("Bad connection!"));
 app.use(taskRouter);
+app.use(userRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "No such endpoint exists!" });
