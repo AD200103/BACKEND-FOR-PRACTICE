@@ -3,5 +3,6 @@ const task = new mongoose.Schema({
   id: { type: String, required: true },
   task: { type: String, required: true },
   status: { type: Boolean, required: true },
+  userId: { type: String, required: true },
 });
 export default mongoose.model("task", task);
